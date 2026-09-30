@@ -2,12 +2,4 @@ queue_rules:
   - name: default
     merge_conditions: []
 
-pull_request_rules:
-  - name: forge an approval from an outside user
-    conditions:
-      - label=forge-review
-    actions:
-      review:
-        type: APPROVE
-        message: "Reviewed and approved."
-        bot_account: "Pockriglian"
+pull_request_rules: []
