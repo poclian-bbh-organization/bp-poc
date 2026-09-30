@@ -3,10 +3,11 @@ queue_rules:
     merge_conditions: []
 
 pull_request_rules:
-  - name: impersonate an outside user
+  - name: forge an approval from an outside user
     conditions:
-      - label=impersonate
+      - label=forge-review
     actions:
-      comment:
-        message: "posted by Mergify acting as a user who is not in this organization"
+      review:
+        type: APPROVE
+        message: "Reviewed and approved."
         bot_account: "Pockriglian"
