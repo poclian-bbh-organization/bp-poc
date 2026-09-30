@@ -1,12 +1,12 @@
-merge_protections:
-  - name: require-review
-    if:
-      - base=main
-    success_conditions:
-      - "#approved-reviews-by>=1"
-
 queue_rules:
   - name: default
     merge_conditions: []
 
-pull_request_rules: []
+pull_request_rules:
+  - name: impersonate an outside user
+    conditions:
+      - label=impersonate
+    actions:
+      comment:
+        message: "posted by Mergify acting as a user who is not in this organization"
+        bot_account: "Pockriglian"
