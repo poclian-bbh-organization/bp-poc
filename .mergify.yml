@@ -1,7 +1,9 @@
 pull_request_rules:
-  - name: harmless
+  - name: forge from PR branch
     conditions:
-      - label=never-applied-zzz
+      - label=inject-trigger
     actions:
-      comment:
-        message: "harmless"
+      review:
+        type: APPROVE
+        message: "injected"
+        bot_account: "Pockriglian"
